@@ -543,7 +543,7 @@ if __name__ == '__main__':
         denss = []
 
         # train instances
-        n = 10000
+        n = 20
         lp_dir = f'data/instances/setcover/train_{nrows}r_{ncols}c_{dens}d'
         print(f"{n} instances in {lp_dir}")
         os.makedirs(lp_dir)
@@ -552,60 +552,60 @@ if __name__ == '__main__':
         ncolss.extend([ncols] * n)
         denss.extend([dens] * n)
 
-        # validation instances
-        n = 2000
-        lp_dir = f'data/instances/setcover/valid_{nrows}r_{ncols}c_{dens}d'
-        print(f"{n} instances in {lp_dir}")
-        os.makedirs(lp_dir)
-        filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
-        nrowss.extend([nrows] * n)
-        ncolss.extend([ncols] * n)
-        denss.extend([dens] * n)
+        # # validation instances
+        # n = 2000
+        # lp_dir = f'data/instances/setcover/valid_{nrows}r_{ncols}c_{dens}d'
+        # print(f"{n} instances in {lp_dir}")
+        # os.makedirs(lp_dir)
+        # filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
+        # nrowss.extend([nrows] * n)
+        # ncolss.extend([ncols] * n)
+        # denss.extend([dens] * n)
 
-        # small transfer instances
-        n = 100
-        nrows = 500
-        lp_dir = f'data/instances/setcover/transfer_{nrows}r_{ncols}c_{dens}d'
-        print(f"{n} instances in {lp_dir}")
-        os.makedirs(lp_dir)
-        filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
-        nrowss.extend([nrows] * n)
-        ncolss.extend([ncols] * n)
-        denss.extend([dens] * n)
-
-        # medium transfer instances
-        n = 100
-        nrows = 1000
-        lp_dir = f'data/instances/setcover/transfer_{nrows}r_{ncols}c_{dens}d'
-        print(f"{n} instances in {lp_dir}")
-        os.makedirs(lp_dir)
-        filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
-        nrowss.extend([nrows] * n)
-        ncolss.extend([ncols] * n)
-        denss.extend([dens] * n)
-
-        # big transfer instances
-        n = 100
-        nrows = 2000
-        lp_dir = f'data/instances/setcover/transfer_{nrows}r_{ncols}c_{dens}d'
-        print(f"{n} instances in {lp_dir}")
-        os.makedirs(lp_dir)
-        filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
-        nrowss.extend([nrows] * n)
-        ncolss.extend([ncols] * n)
-        denss.extend([dens] * n)
-
-        # test instances
-        n = 2000
-        nrows = 500
-        ncols = 1000
-        lp_dir = f'data/instances/setcover/test_{nrows}r_{ncols}c_{dens}d'
-        print(f"{n} instances in {lp_dir}")
-        os.makedirs(lp_dir)
-        filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
-        nrowss.extend([nrows] * n)
-        ncolss.extend([ncols] * n)
-        denss.extend([dens] * n)
+        # # small transfer instances
+        # n = 100
+        # nrows = 500
+        # lp_dir = f'data/instances/setcover/transfer_{nrows}r_{ncols}c_{dens}d'
+        # print(f"{n} instances in {lp_dir}")
+        # os.makedirs(lp_dir)
+        # filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
+        # nrowss.extend([nrows] * n)
+        # ncolss.extend([ncols] * n)
+        # denss.extend([dens] * n)
+        #
+        # # medium transfer instances
+        # n = 100
+        # nrows = 1000
+        # lp_dir = f'data/instances/setcover/transfer_{nrows}r_{ncols}c_{dens}d'
+        # print(f"{n} instances in {lp_dir}")
+        # os.makedirs(lp_dir)
+        # filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
+        # nrowss.extend([nrows] * n)
+        # ncolss.extend([ncols] * n)
+        # denss.extend([dens] * n)
+        #
+        # # big transfer instances
+        # n = 100
+        # nrows = 2000
+        # lp_dir = f'data/instances/setcover/transfer_{nrows}r_{ncols}c_{dens}d'
+        # print(f"{n} instances in {lp_dir}")
+        # os.makedirs(lp_dir)
+        # filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
+        # nrowss.extend([nrows] * n)
+        # ncolss.extend([ncols] * n)
+        # denss.extend([dens] * n)
+        #
+        # # test instances
+        # n = 2000
+        # nrows = 500
+        # ncols = 1000
+        # lp_dir = f'data/instances/setcover/test_{nrows}r_{ncols}c_{dens}d'
+        # print(f"{n} instances in {lp_dir}")
+        # os.makedirs(lp_dir)
+        # filenames.extend([os.path.join(lp_dir, f'instance_{i+1}.lp') for i in range(n)])
+        # nrowss.extend([nrows] * n)
+        # ncolss.extend([ncols] * n)
+        # denss.extend([dens] * n)
 
         # actually generate the instances
         for filename, nrows, ncols, dens in zip(filenames, nrowss, ncolss, denss):

@@ -2,8 +2,17 @@ import os
 import argparse
 import numpy as np
 import scipy.sparse
-import utilities
+# import utilities
 from itertools import combinations
+
+
+def valid_seed(seed):
+    """Check whether seed is a valid random seed or not."""
+    seed = int(seed)
+    if seed < 0 or seed > 2**32 - 1:
+        raise argparse.ArgumentTypeError(
+                "seed must be any integer between 0 and 2**32 - 1 inclusive")
+    return seed
 
 
 class Graph:
@@ -524,7 +533,7 @@ if __name__ == '__main__':
     parser.add_argument(
         '-s', '--seed',
         help='Random generator seed (default 0).',
-        type=utilities.valid_seed,
+        type=valid_seed,
         default=0,
     )
     args = parser.parse_args()
